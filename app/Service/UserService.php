@@ -21,6 +21,7 @@ class UserService
             'email' => $userDto->getEmail(),
             'password' => $userDto->getPassword(),
             'phone_number' => $userDto->getPhoneNumber(),
+            'pin' => bcrypt($userDto->getPin()),
         ]);
     }
 }
