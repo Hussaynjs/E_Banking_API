@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\OnboardingController;
 use App\Http\Controllers\PinController;
@@ -20,6 +21,7 @@ Route::prefix('onboarding')->group(function(){
     Route::middleware('auth:sanctum')->group(function(){
         Route::post('/setup-pin', [PinController::class, 'setupPin']);
         Route::post('/validate-pin', [PinController::class, 'validatePin']);
+        Route::post('/create-account', [AccountController::class, 'store']);
     });
 });
 
